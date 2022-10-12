@@ -1,4 +1,4 @@
-.content {
+.container {
   display: grid;
   grid-template: 100px calc(100vh - 100px) / 1fr;
   grid-gap: 3px;
@@ -7,14 +7,21 @@
   "content"
 }
 
-.nav {
+.mg-a {
+  margin: auto;
+}
 
-  background-color:lightblue;
+.d-flex {
+  display: flex;
+}
+
+.nav {
+  background-color:#eee;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   grid-area: nav;
 }
 
 
 .content {
-  background-color:lightgoldenrodyellow;
   grid-area: content;
 }

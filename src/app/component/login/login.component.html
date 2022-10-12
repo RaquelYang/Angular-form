@@ -1,0 +1,23 @@
+<h2 class="text-center">Login</h2>
+<form [formGroup]="form" (click)="sendForm()">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Account</mat-label>
+    <input matInput formControlName="email">
+    <mat-error *ngIf="email.errors?.['required']">Email required</mat-error>
+    <mat-error *ngIf="email.errors?.['email']">Email validator error</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="relative">
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password">
+    <ng-container class="error-hint" *ngIf="password.touched && password.errors | onlyOneError:['required', 'passwordStrength', 'minlength'] as error">
+      <div class="field-message" *ngIf="error.required">Password required</div>
+      <div class="field-message" *ngIf="error.minlength">Password mini to 8 </div>
+      <div class="field-message" *ngIf="error.passwordStrength">Password not Strength</div>
+    </ng-container>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Login</button>
+
+</form>

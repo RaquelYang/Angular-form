@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  linkLists = [
+    {name: '登入表單', link: 'login'}
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
